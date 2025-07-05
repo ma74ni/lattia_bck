@@ -1,0 +1,4 @@
+PORT=3100
+
+MONGO_URL=mongodb://mongouser:123456@localhost:27017
+MONGO_DB_NAME=lattia_db

@@ -1,3 +1,8 @@
+import 'dotenv/config'
+import { get } from 'env-var'
+
 export const envs = {
-    PORT: process.env.PORT ? +process.env.PORT : 3000
+    PORT: get('PORT').required().asPortNumber(),
+    MONGO_DB_NAME: get('MONGO_DB_NAME'). required().asString(),
+    MONGO_URL: get('MONGO_URL').required().asString()
 }
