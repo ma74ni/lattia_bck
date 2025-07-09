@@ -1,0 +1,6 @@
+import { CreateBaseTypeDto } from "../dtos/baseType/create-baseType.dto";
+import { BaseTypeEntity } from "../entities/baseType.entities";
+
+export abstract class BaseTypeDatasource{
+    abstract createBaseType(createBaseTypeDto: CreateBaseTypeDto): Promise<BaseTypeEntity>
+}
