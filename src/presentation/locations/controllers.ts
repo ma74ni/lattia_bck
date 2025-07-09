@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { CreateLocationDto, LocationRepository, CreateLocation, CustomError } from "../../domain";
+import { LocationModel } from "../../data/mongodb";
 
 export class LocationController{
     constructor(
@@ -22,5 +23,16 @@ export class LocationController{
         .then(data => res.json(data))
         .catch(error => this.handleError(error, res))
 
+    }
+
+    listLocation = (req: Request, res: Response) => {
+        LocationModel.find()
+        .then(locations => {
+           res.json({ locations }); 
+        })
+        .catch(error => {
+        console.error('Error listing locations:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    });
     }
 }

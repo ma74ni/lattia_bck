@@ -12,7 +12,7 @@ export class LocationDatasourceImpl implements LocationDatasource{
         try{
             const nameExist = await LocationModel.findOne({name:name})
             if(nameExist){
-                throw CustomError.badRequest('Name already exists')
+                throw CustomError.badRequest('Location name already exists')
             }
             const location = await LocationModel.create({
                 name: name,

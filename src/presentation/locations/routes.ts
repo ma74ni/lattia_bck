@@ -11,6 +11,7 @@ export class LocationRoutes {
         const controller = new LocationController(locationRepository)
 
         router.post('/create', (res, req) => {controller.createLocation(res, req)})
+        router.get('/', (res, req) => {controller.listLocation(res, req)})
 
         return router
     }
