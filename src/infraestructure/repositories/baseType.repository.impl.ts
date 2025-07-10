@@ -8,5 +8,8 @@ export class BaseTypeRepositoryImpl implements BaseTypeRepository{
     createBaseType(createBaseTypeDto: CreateBaseTypeDto): Promise<BaseTypeEntity>{
         return this.baseTypeDatasource.createBaseType(createBaseTypeDto)
     }
+    findAll(): Promise<BaseTypeEntity[]>{
+        return this.baseTypeDatasource.findAll()
+    }
 
 }

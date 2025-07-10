@@ -25,4 +25,10 @@ export class BaseTypeController{
         .catch(error => this.handleError(error, res))
     }
 
+    listBaseType = (req: Request, res: Response) => {
+        this.baseTypeRepository.findAll()
+        .then(data => res.json(data))
+        .catch(error => this.handleError(error, res))
+    }
+
 }

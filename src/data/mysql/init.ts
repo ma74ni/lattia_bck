@@ -1,11 +1,15 @@
 import { MySqlDatabase } from './mysql-database';
-import { BaseTypeModel } from './models/baseType.model';
-import { Models } from './models';
+import { BaseTypeModel, initBaseTypeModel  } from './models/baseType.model';
+
+export const Models = {
+  BaseType: BaseTypeModel
+};
+
 
 export const initMySQLModels = () => {
   const sequelize = MySqlDatabase.sequelize;
   if (!sequelize) throw new Error('Sequelize no inicializado');
 
-  Models.BaseType = BaseTypeModel(sequelize);
+  initBaseTypeModel(sequelize); 
   
 };

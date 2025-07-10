@@ -3,4 +3,5 @@ import { BaseTypeEntity } from "../entities/baseType.entities";
 
 export abstract class BaseTypeRepository{
     abstract createBaseType(createBaseTypeDto: CreateBaseTypeDto): Promise<BaseTypeEntity>
+    abstract findAll(): Promise<BaseTypeEntity[]>;
 }

@@ -11,7 +11,8 @@ export class BaseTypeRoutes {
         const baseTypeRepository = new BaseTypeRepositoryImpl(datasource)
         const controller = new BaseTypeController(baseTypeRepository)
 
-        router.post('/create', (res, req)=>{controller.createBaseType(res, req)})
+        router.post('/create', (req, res)=>{controller.createBaseType(req, res)})
+        router.get('/', (req, res)=>{controller.listBaseType(req, res)})
 
         return router
     }
